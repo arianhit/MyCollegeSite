@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+@{
+
+    ViewData["Title"] = "Course List";
+    
+}
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <title>Cantor college :: courses</title>
+    <link rel="stylesheet" href="/styles/mobile.css" />
+    <link rel="stylesheet"
+          href="/styles/desktop.css"
+          media="only screen and (min-width : 720px)" />
+</head>
+<body>
+    <div id="container">
+        <header>
+            <div class="topOfHomePage">
+                <h1><a href="/index.html">Cantor</a></h1>
+            </div>
+            <h2><a href="/index.html"> college</a></h2>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/Home/Courses">Courses</a></li>
+                <li>
+                    <div class="dropdown">
+                        <a class="dropbtn">information</a>
+                        <div class="dropdown-content">
+                            <a href="/information-students.html">Student</a>
+                            <a href="/Information-staff.html">Staff</a>
+                            <a href="/information-busines.html">Busines</a>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="/Facilities.html">Facilities</a></li>
+                <li><a href="/Learning-Resources.html">Learning Resources</a></li>
+                <li><a href="/Contact-Us.html">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div id="content">
+            <section>
+                <p><img src="/images/ACES-036-Computing-Playstation-Lab-2.jpg" class="left-float" alt="Computing courses room" /></p>
+
+                <h2>Computing Courses</h2>
+
+                <p>
+                    The College offers a range of courses to suit applicants with varying backgrounds and educational abilities. At undergraduate level, there are single BSc Honours Degree courses in Computing, Business Computing, Software Engineering and Information Systems Design.
+                    <br>
+                    <br>
+                    Computing is also a subject offered on the Combined Honours Programme. Higher National Diploma and Certificate courses are available in Business Information Technology and Computing. Students taking up the HND in Computing can specialise in either Business Computing, Software Engineering or Information Systems Design.
+                    <br>
+                    <br>
+                    The courses are British Computer Society accredited and are highly relevant to modern industry. They are designed to prepare students for professional occupations in Computing and related fields. Many graduates continue their studies to pursue a higher degree such as an MSc. or PhD.
+                </p>
+                <table style="width:100%">
+                    @foreach (var course in Model)
+                    {
+                        <tr>
+                            <th>Qualification:</th>
+                            <th>
+                                Years of Study:
+                            </th>
+                            <th>
+                                Placement Opporunity:
+                            </th>
+
+                        </tr>
+                        <tr>
+                            <td>@course.Qualification</td>
+                            <td>@course.Years_of_Study</td>
+                            <td>@course.Placement_Opporunity</td>
+
+                        </tr>
+
+                    }
+                </table>
+                <p><img src="/images/IMG_0170_Changed.jpg" class="resize-image" alt="Computing design room" /></p>
+            </section>
+        </div>
+        <div id="text-left">
+            <section>
+
+                <h2>Design Courses</h2>
+
+                <p>
+                    College has two main practice based programmes of study in Visual Communications and Three-Dimensional Design, a Masters Degree programme of study and contributes to a Combined Honours Programme.
+                    <br><br>
+                    The College is committed to Creative Thinking in Visual Communication and Intelligent Making in Three-Dimensional Design. These philosophies emphasise the importance given to the development of innovative solutions to design problems and also the craft skills in making.
+                </p>
+                <table style="width:100%">
+                    @foreach (var course in Model)
+                    {
+                        <tr>
+                            <th>Level:</th>
+                            <th>
+                                Course Title
+
+                            </th>
+                            <th>
+                                Duration
+                            </th>
+
+                        </tr>
+                        <tr>
+                            <td>@course.Level</td>
+                            <td>@course.Course_Title</td>
+                            <td>@course.Duration</td>
+
+                        </tr>
+
+                    }
+                </table>
+            </section>
+        </div>
+
+    </div>
+    <footer>
+        <p>Copyright &copy; 2021</p>
+    </footer>
+</body>
+</html>
+
